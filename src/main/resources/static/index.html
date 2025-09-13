@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Digi Planner Website</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div class="topnav">
+    <a href="index.html" class="active">Home</a>
+    <a href="news.html">News</a>
+    <a href="about.html">About</a>
+    <a href="planner.html">Planner</a>
+  </div>
+<h2></h2>
+
+<div class="flex-container">
+<div class="slideshow-section">
+<div class="slideshow-container">
+
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 3</div>
+    <img src="/images/Landing_Pic.png" style="width:100%; height:100%; object-fit: contain;">
+    
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src="/images/Second_Image.png" style="width:100%; height:100%; object-fit: contain;">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="/images/Third_Image.png" style="width:100%; height:100%; object-fit: contain;">
+    
+  </div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+</div>
+
+<div id = background-signup> 
+	<div id="error-message">
+  		<p id="error-text"></p>
+  	</div>
+
+<div class="signup-container">
+  <form id="signup-form" class="signup-form">
+  
+    <div class="signup-login-slider">
+    	<button class="signup-slider" id="signup-slider"><h2>Sign Up</h2></button>
+    	<button class="login-slider" id="login-slider"><h2>Login</h2></button>
+    </div>
+   	<p>
+    
+    
+    <div class="form-signup" id="form-signup">
+    <div class="form-group">
+      <input type="text" id="name" name="name" placeholder="Full Name" required>
+    </div>
+    <div class="form-group">
+      <input type="email" id="email" name="email" placeholder="Email" required>
+    </div>
+    <div class="form-group">
+      <input type="password" id="password" name="password" placeholder="Password" required>
+    </div>
+    <button type="submit" class="signup-button" id="signup-button">Sign Up</button>
+    </div>
+    
+    
+    <div class="form-login" id="form-login">
+    <div class="form-group">
+      <input type="email" id="email-login" name="email-login" placeholder="Email" required>
+    </div>
+    <div class="form-group">
+      <input type="password" id="password-login" name="password-login" placeholder="Password" required>
+    </div>
+    <button type="submit" class="login-button" id="login-button">Login</button>
+    </div>
+    
+    
+  </form>
+</div>
+</div>
+
+<script src="/js/script.js"></script>
+</div>
+  
+</body>
+</html>

@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html>
+
+  
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Planner - Digi Planner</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
+</head>
+
+ <!-- This is the top navigation bar --> 
+<body>
+  <div class="topnav">
+  	<div class="journalBtn">
+  		<a href="JournalEntries.html" id="openSidebarBtn">Journal</a>
+		<div id="sidebar" class="sidebar">
+  			<a href="#" id="closeSidebarBtn">&times;</a>
+  			<a href="journalEntries.html">View Journal Entries</a>
+		</div>
+  	</div>
+  	
+	<div class="nav-links">
+    	<a href="index.html">Home</a>
+    	<a href="news.html">News</a>
+   	 	<a href="about.html">About</a>
+    	<a href="planner.html" class = "active">Planner</a>
+    </div>
+    
+    <!-- Dropdown menu for account modification -->
+    <div class="dropdown">
+    	<button class="dropbtn">Account</button>
+    	<div class="dropdown-content">
+      		<a href="#" id="modify-account">Modify Info</a>
+      		<a href="#" id="delete-account">Delete Account</a>
+      		<a href="#" id="logout">Logout</a>
+    	</div>
+  	</div>
+  	
+  </div>
+  <br>
+  <div id="welcome">
+  	<h1 id="welcome-title"></h1>
+  </div>
+  
+  <div id="error-message">
+  		<p id="error-text"></p>
+  	</div>
+  
+   <!-- This is the calendar section --> 
+  <div class="planner-container">
+    <div class="calendar-section">
+      <h2>Calendar</h2>
+      <div class="calendar-header">
+
+         <!-- Allows user to navigate through the months -->
+        <button onclick="previousMonth()">&lt;</button>
+        <h3 id="currentMonthYear"></h3>
+        <button onclick="nextMonth()">&gt;</button>
+      </div>
+      <div class="calendar-grid">
+
+         <!-- Creates the days of the week --> 
+        <div class="weekday">Sun</div>
+        <div class="weekday">Mon</div>
+        <div class="weekday">Tue</div>
+        <div class="weekday">Wed</div>
+        <div class="weekday">Thu</div>
+        <div class="weekday">Fri</div>
+        <div class="weekday">Sat</div>
+      </div>
+
+       <!-- Shows the popup to add an event to the calendar--> 
+      <div id="calendarDays" class="calendar-days"></div>
+      <div id="eventModal" class="modal">
+        <div class="modal-content" id="modal-content">
+          <h3>Add Event</h3>
+          <input type="text" id="eventTitle" placeholder="Event Title">
+          <input type="time" id="eventTime">
+          <button onclick="saveEvent()" id="saveBtn">Save</button>
+          <button onclick="closeModal()" id="closeBtn">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+     <!-- This section allows you to add a task --> 
+    <div class="todo-section">
+      <h2>To-Do List</h2>
+      <div class="todo-form" id="todo-form">
+        <div class="form-group">
+          <input type="text" id="todoTitle" placeholder="Task Title">
+        </div>
+        
+        <div class="form-group">
+        	<input type="text" id="taskDescription" placeholder="Description">
+        </div>
+        
+        <div class="form-group">
+          <select id="todoPriority">
+             <!-- Allows customization of priority --> 
+            <option value="low">Low Priority</option>
+            <option value="medium">Medium Priority</option>
+            <option value="high">High Priority</option>
+          </select>
+        </div>
+			
+		<div class="form-group">
+			<input id="taskCategory" type="text" placeholder="Category" />
+		</div>	
+		
+         <!-- Allows user to set deadline --> 
+        <div class="form-group">
+          <input type="date" id="todoDeadline">
+        </div>
+        
+        <div class="form-group">
+        	<input id="taskCompleted" type="checkbox" />
+        </div>
+
+         <!-- Allows user to add a task/ creates the button--> 
+        <button id="taskFormButton" onclick="addTask()">Add Task</button>
+      </div>
+      <div id="todoList" class="todo-list"></div>
+    </div>
+    
+    <!-- New Reminders Section -->
+      <div class="reminder-section">
+        <h2>Reminders</h2>
+        <div id="reminderForm" class="reminder-form">
+          <div class="form-group">
+            <label for="reminderTitle">Title</label>
+            <input type="text" id="reminderTitle" placeholder="Reminder Title">
+          </div>
+          <div class="form-group">
+            <label for="reminderDate">Date & Time</label>
+            <input type="datetime-local" id="reminderDate">
+          </div>
+          <div class="form-group">
+            <label for="reminderNotes">Notes</label>
+            <textarea id="reminderNotes" placeholder="Add notes..."></textarea>
+          </div>
+          <div class="form-group">
+            <label for="reminderRepeat">Repeat</label>
+            <select id="reminderRepeat">
+              <option value="never">Never</option>
+              <option value="daily">Daily</option>
+              <option value="weekly">Weekly</option>
+              <option value="monthly">Monthly</option>
+            </select>
+          </div>
+          <button onclick="addReminder()">Add Reminder</button>
+        </div>
+
+      <!--   <div class="search-container">-->
+        <!--  <input -->
+  		<!--	type="text" -->
+  		<!--	id="reminderSearch" -->
+  		<!--	placeholder="Search reminders..."-->
+  		<!--	oninput="searchReminders()"-->
+		<!--  />-->
+		 <!-- <br>-->
+       <!-- </div> -->
+       <div id="remindersList" class="reminders-list"></div>
+
+	</div>
+  </div>
+
+	<!-- Modals for Modify Info and Delete Account-->
+	<div id="modifyModal" class="modal">
+  		<div class="modal-content">
+   		<h3>Edit Account Info</h3>
+    	<input type="text" id="editName" placeholder="New name">
+    	<input type="email" id="editEmail" placeholder="New email">
+    	<input type="password" id="editPassword" placeholder="New password">
+    	<button onclick="submitModify()">Save Changes</button>
+    	<button onclick="closeModal('modifyModal')">Cancel</button>
+  		</div>
+	</div>
+	
+	<div id="deleteModal" class="modal">
+  		<div class="modal-content">
+    	<p>Are you sure you want to delete your account?</p>
+    	<button onclick="confirmDelete()">Yes, Delete</button>
+    	<button onclick="closeModal('deleteModal')">Cancel</button>
+  		</div>
+	</div>
+  
+  <script src="/js/planner.js"></script>
+</body>
+</html>

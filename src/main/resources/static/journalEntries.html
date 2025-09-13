@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Journal - Digi Planner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="topnav">
+    <div class="journalBtn">
+      <a href="JournalEntries.html" id="openSidebarBtn" class = "active">Journal</a>
+      <div id="sidebar" class="sidebar">
+        <a href="#" id="closeSidebarBtn">&times;</a>
+        <a href="JournalEntries.html">View Journal Entries</a>
+      </div>
+    </div>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="news.html">News</a>
+      <a href="about.html">About</a>
+      <a href="planner.html">Planner</a>
+    </div>
+
+    
+    </div>
+  
+  <div class="journal-container">
+    <h1>Your Journal Entries</h1>
+    <div id="entryForm">
+      <input type="text" id="journalTitle" placeholder="Title" required>
+      <input type="date" id="entry-date" placeholder="Date" required>
+      <textarea id="journalContent" placeholder="Write your thoughts..." required></textarea>
+      <button id="addEntryBtn">Add Entry</button>
+    </div>
+    <div id="entriesList"></div>
+  </div>
+  
+  <script src="/js/journal.js"></script>
+  
+</body>
+</html>

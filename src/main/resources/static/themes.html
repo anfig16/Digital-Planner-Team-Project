@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="main.css"> <!-- Link to your CSS -->
+  <title>Theme Customization</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Top Navigation Bar -->
+  <div class="topnav">
+    <a href="index.html">Home</a>
+    <a href="news.html">News</a>
+    <a href="about.html">About</a>
+    <a href="planner.html">Planner</a>
+    <a href="theme-customization.html" class="active">Theme Customization</a> <!-- New page link -->
+  </div>
+
+  <!-- Content Section for Theme Customization -->
+  <div class="content">
+    <h1>Customize Your Theme</h1>
+    <form id="theme-form">
+      <!-- Dropdown to select existing theme -->
+      <label for="theme-select">Select Theme:</label>
+      <select id="theme-select" name="theme">
+        <option value="default">Default</option>
+        <option value="dark">Dark</option>
+        <option value="light">Light</option>
+        <option value="custom">Custom</option>
+      </select><br><br>
+
+      <!-- Button to apply selected theme -->
+      <button type="button" id="apply-theme">Apply Theme</button>
+
+      <!-- Custom Theme Creation -->
+      <h2>Create Custom Theme</h2>
+      <label for="theme-name">Theme Name:</label>
+      <input type="text" id="theme-name" name="theme-name"><br><br>
+
+      <label for="primary-color">Primary Color:</label>
+      <input type="color" id="primary-color" name="primary-color"><br><br>
+
+      <label for="secondary-color">Secondary Color:</label>
+      <input type="color" id="secondary-color" name="secondary-color"><br><br>
+
+      <label for="text-color">Text Color:</label>
+      <input type="color" id="text-color" name="text-color"><br><br>
+
+      <label for="background-image">Background Image URL:</label>
+      <input type="text" id="background-image" name="background-image"><br><br>
+
+      <!-- Button to save the custom theme -->
+      <button type="submit">Save Custom Theme</button>
+    </form>
+  </div>
+
+  <!-- Add your JavaScript file here for handling form and theme changes -->
+  <script src="theme.js"></script> <!-- Example JS file for theme-related operations -->
+</body>
+</html>
