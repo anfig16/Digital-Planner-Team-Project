@@ -1,0 +1,673 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cal Sans', Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.mySlides {
+  display: none;
+}
+
+img {
+  vertical-align: middle;
+  border-radius: 15px;
+  width: 100%;
+  height: 700px;
+  object-fit: cover;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.slideshow-section {
+  flex: 0 0 70%;
+}
+
+.slideshow-container {
+  width: 100%;
+  position: relative;
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+.topnav {
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-right: 160px;
+}
+
+.nav-links {
+	display: flex;
+
+}
+
+.topnav a {
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #fcb538;
+  color: white;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+  background-color: #404040;
+  color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+
+#error-message {
+  color: red;
+  text-align: center;
+  font-weight: bold;
+}
+
+.background-signup {
+  background-color: #333;
+  padding: 60px;
+  min-height: 100vh; 
+}
+
+
+.signup-container {
+  flex: 0 0 30%;
+  padding: 20px;
+}
+
+.signup-form {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.signup-form h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: 'Cal Sans', sans-serif;
+}
+
+.signup-button, .login-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #404040;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: 'Cal Sans', sans-serif;
+  transition: background-color 0.3s;
+}
+
+.signup-button:hover, .login-button:hover {
+  background-color: #fcb538;
+}
+
+.signup-slider, .login-slider {
+  height: 50px;
+  width: 120px;
+
+  display: inline;
+  align-items: center;
+  text-align: center;
+  background-color: white;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: 'Cal Sans', sans-serif;
+  transition: background-color 0.3s;
+   h2 {
+  	margin:0;
+  	padding:0;
+  }
+}
+.signup-slider:hover, .login-slider:hover {
+  background-color: #91b3e2;
+  h2 {
+  	color:  white;
+  }
+}
+
+.signup-login-slider {
+	display: flex;
+	justify-content: center;
+}
+
+
+
+#form-login {
+	display:none;
+}
+
+.content {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.news-section, .about-section {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+team {
+  padding-top: 50px;
+  margin: 40px;
+}
+
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: 'Cal Sans', sans-serif;
+  min-height: 150px;
+  resize: vertical;
+}
+
+#welcome {
+	text-align: center;
+}
+
+.events-list,
+.todo-list {
+  margin-top: 20px;
+}
+
+.event-item,
+.todo-item {
+  background: #f5f5f5;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.planner-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  display: flex;
+  gap: 30px;
+}
+
+.calendar-section,
+.todo-section, .reminder-section {
+  flex: 1;
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.priority-high {
+  border-left: 10px solid #ff4444;
+}
+
+.priority-medium {
+  border-left: 10px solid #ffbb33;
+}
+
+.priority-low {
+  border-left: 10px solid #00C851;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: 'Cal Sans', sans-serif;
+}
+
+button {
+  padding: 12px;
+  background-color: #404040;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: 'Cal Sans', sans-serif;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #fcb538;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.weekday {
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.calendar-day {
+  border: 1px solid #ddd;
+  padding: 10px;
+  min-height: 80px;
+  cursor: pointer;
+  position: relative;
+}
+
+.calendar-day:hover {
+  background-color: #f0f0f0;
+}
+
+.calendar-day.other-month {
+  background-color: #f9f9f9;
+  color: #999;
+}
+
+.event-marker {
+  background-color: #fcb538;
+  color: white;
+  padding: 2px 5px;
+  border-radius: 3px;
+  margin: 2px 0;
+  font-size: 12px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 300px;
+}
+
+.modal-content input {
+  margin-bottom: 10px;
+}
+
+
+
+.reminder-section h2 {
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+#reminderForm {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+#reminderForm label {
+  font-weight: 500;
+  color: #4b5563;
+}
+
+
+#reminderForm input,
+#reminderForm textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+#reminderForm textarea {
+  resize: vertical;
+}
+
+#reminderForm button {
+  background-color: #4f46e5;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  width: 100%;
+}
+
+#reminderForm button:hover {
+  background-color: #4338ca;
+}
+
+#todo-form button {
+  background-color: #4f46e5;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  width: 100%;
+}
+
+#todo-form button:hover {
+  background-color: #4338ca;
+}
+
+
+/* Search Section */
+.search-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+
+#searchType {
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+}
+
+#searchInput {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+}
+
+/* Reminder Table */
+#reminderTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+#reminderTable th,
+#reminderTable td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+#reminderTable th {
+  background-color: #f3f4f6;
+  font-weight: 600;
+  color: #374151;
+}
+
+#reminderTable tr:hover {
+  background-color: #f9fafb;
+}
+
+.reminder-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.reminder-actions button {
+  padding: 0.25rem 0.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.75rem;
+}
+
+.edit-btn {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #ef4444;
+  color: white;
+}
+
+.dropdown {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.dropbtn, .journalBtn {
+  background-color: #333;
+  color: white;
+  padding: 14px 16px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown menu */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  min-width: 160px;
+  z-index: 1000;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  display: block;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #fcb538;
+  color: white;
+}
+
+
+/* Show on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+
+.openSidebarBtn {
+  font-size: 20px;
+  background: #333;
+  border: none;
+  color: #f2f2f2;
+  cursor: pointer;
+  a:hover {
+    background-color: #f2f2f2;
+  }
+}
+
+.journal-container {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 20px;
+  padding-top: 10px;
+	
+}
+
+#entryForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+#entryForm input:focus,
+#entryForm textarea:focus {
+  border-color: #fcb538;
+  outline: none;
+}
+
+#entriesList {
+  display: flex;
+  
+  flex-direction: row;
+  gap: 20px;
+}
+
+.journal-entry {
+	height: 200px;
+	width: 200px;
+	flex-grow: 1;
+	border-radius: 8px;
+	border-color: black;
+  overflow-y: hidden;
+  justify-content: space-between;
+}
+
+/* Scrollable description container */
+.journal-entry .entry-content {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  padding-right: 5px; /* for scrollbar spacing */
+}
+
+/* Prevent full page scrolling when inside content */
+.journal-entry .entry-content::-webkit-scrollbar {
+  width: 6px;
+}
