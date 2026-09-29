@@ -11,7 +11,7 @@ import com.mongodb.client.MongoClients;
 @Configuration // Marks this class as a configuration class
 public class MongoConfig extends AbstractMongoClientConfiguration {
 
-    private final Dotenv dotenv = Dotenv.load(); // Loads the .env file to access environment variables
+    private final Dotenv dotenv = Dotenv.configure().ignoreIfMissing().load(); // Loads the .env file to access environment variables
 
     // This method specifies the name of the MongoDB database to use
     @Override
